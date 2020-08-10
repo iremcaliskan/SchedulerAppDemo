@@ -97,7 +97,6 @@ namespace SchedulerApp.Controllers
             if (e != null)
             {
                 // some logic specific to recurring events support
-                // https://docs.dhtmlx.com/scheduler/server_integration.html#savingrecurringevents
 
                 if (e.EventPID != default(int))
                 {
@@ -113,7 +112,6 @@ namespace SchedulerApp.Controllers
                     if (!string.IsNullOrEmpty(e.RecType) && e.RecType != "none")
                     {
                         // all modified occurrences must be deleted when we update recurring series
-                        // https://docs.dhtmlx.com/scheduler/server_integration.html#savingrecurringevents
 
                         _context.RecurringEvents.RemoveRange(
                             _context.RecurringEvents.Where(ev => ev.EventPID == id)
